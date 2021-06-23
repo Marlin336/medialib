@@ -1,0 +1,86 @@
+﻿<Page x:Class="Medialib_proj.Pages.Music_start"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Medialib_proj.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Music_start">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="153*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="tb_search" Margin="5,5,50,5" TextWrapping="Wrap" Text="Search..." Foreground="Gray" FontSize="14" GotFocus="Tb_search_GotFocus" LostFocus="Tb_search_LostFocus" Grid.ColumnSpan="2"/>
+        <Button x:Name="b_search" Margin="0,5,5,5" HorizontalAlignment="Right" Width="40" Click="B_search_Click" Grid.Column="1">
+            <Image Source="../Resourses/img_search.png" Margin="1"/>
+        </Button>
+        <GroupBox Margin="10" Grid.Row="1">
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Label>
+                        Genres
+                    </Label>
+                    <Button x:Name="b_all" Width="30" Click="B_all_Click">
+                        <CheckBox IsEnabled="False" IsChecked="True"/>
+                    </Button>
+                    <Button x:Name="b_none" Width="30" Click="B_none_Click">
+                        <CheckBox IsEnabled="False" IsChecked="False"/>
+                    </Button>
+                </StackPanel>
+            </GroupBox.Header>
+            <ListBox x:Name="_Genres">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding item.value}" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </GroupBox>
+        <DockPanel Grid.Column="1" Grid.Row="1" LastChildFill="True">
+            <Grid x:Name="manager_panel" DockPanel.Dock="Bottom" Height="40" Margin="0,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="b_add" Grid.Column="1" Click="B_add_Click" IsEnabled="True">
+                    <Image Source="../Resourses/img_plus.png"/>
+                </Button>
+                <Button x:Name="b_del" Grid.Column="3" Click="B_del_Click" IsEnabled="False">
+                    <Image Source="../Resourses/img_minus.png"/>
+                </Button>
+                <Button x:Name="b_edit" Grid.Column="5" Click="B_edit_Click" IsEnabled="False">
+                    <Image Source="../Resourses/img_edit.png"/>
+                </Button>
+            </Grid>
+            <DataGrid x:Name="grid_music" SelectionMode="Single" SelectionUnit="FullRow" Background="White" AlternatingRowBackground="LightGray" DockPanel.Dock="Top" SelectionChanged="Grid_music_SelectionChanged">
+                <DataGrid.ItemContainerStyle>
+                    <Style TargetType="DataGridRow">
+                        <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                    </Style>
+                </DataGrid.ItemContainerStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding id}" Header="id" IsReadOnly="True" Visibility="Hidden"/>
+                    <DataGridTextColumn Binding="{Binding musician}" Header="Musician/Band" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding album}" Header="Album" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding year}" Header="Year" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding number}" Header="Number" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding name}" Header="Name" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding duration}" Header="Duration" IsReadOnly="True"/>
+                    <DataGridTextColumn Binding="{Binding rating}" Header="Rating" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</Page>

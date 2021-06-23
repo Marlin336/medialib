@@ -1,0 +1,101 @@
+﻿<Page x:Class="Medialib_proj.Pages.Movies_view"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Medialib_proj.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Movies_item">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TabControl TabStripPlacement="Top">
+            <TabItem Header="Description">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="113*"/>
+                        <RowDefinition Height="98*"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Margin="5,0,0,0">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Name:" Grid.Column="1" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_name" Content="nametext" FontSize="13"/>
+                        </StackPanel>
+                        <Label x:Name="lab_year" Content="Year" FontSize="13" DockPanel.Dock="Top"/>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Genre:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_genre" Content="genrelist" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Directed by:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_dirlist" Content="directorlist" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Actors:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_actlist" Content="actorlist" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Location:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_locat" Content="location" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Duration:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_duration" Content="duration" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Rating:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_rating" Content="rating" FontSize="13"/>
+                        </StackPanel>
+                    </DockPanel>
+                    <ScrollViewer Grid.Row="1" Margin="5" VerticalScrollBarVisibility="Auto">
+                        <TextBlock x:Name="tb_descript" TextWrapping="Wrap" Text="TextBlock" FontSize="13"/>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Comments" GotFocus="TabItem_GotFocus">
+                <Grid>
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,0" DockPanel.Dock="Top">
+                            <Label Content="Your grade: " FontSize="18" VerticalContentAlignment="Center"/>
+                            <Label>
+                                <Image x:Name="star_1" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_2" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_3" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_4" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_5" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                        </StackPanel>
+                        <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
+                            <TextBox x:Name="comment_field" Margin="5" TextWrapping="Wrap" Height="100" KeyDown="Comment_field_KeyDown"/>
+                        </ScrollViewer>
+                        <ListBox x:Name="lb_comment" Focusable="True" Margin="5,5,5,0" DockPanel.Dock="Top">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Black" BorderThickness="1,1,0,1" Tag="{Binding id}" MouseDown="Border_MouseDown">
+                                        <StackPanel>
+                                            <Label Foreground="Gray">
+                                                <TextBlock Text="{Binding data}"/>
+                                            </Label>
+                                            <TextBlock Margin="7" Text="{Binding comment}"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

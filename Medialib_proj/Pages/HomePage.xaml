@@ -1,0 +1,82 @@
+﻿<Page x:Class="Medialib_proj.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Medialib_proj"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Home page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="b_collections" Click="B_collections_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Image Source="..\Resourses/img_collection.png" Margin="5"/>
+                <TextBlock Text="Collections" Grid.Row="1" Foreground="#91459B" TextAlignment="Center" FontFamily="Monotype Corsiva" FontSize="24"/>
+            </Grid>
+        </Button>
+        <Button x:Name="b_celebrities" Grid.Row="1" Click="B_celebrities_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Image Source="..\Resourses/img_celebrities.png" Margin="5"/>
+                <TextBlock Text="Celebrities" Grid.Row="1" Foreground="#009ADE" TextAlignment="Center" FontFamily="Monotype Corsiva" FontSize="24"/>
+            </Grid>
+        </Button>
+        <Button x:Name="b_movies" Grid.Column="1" Click="B_movies_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Image Source="..\Resourses/img_video.png" Margin="5"/>
+                <TextBlock Text="Movies" Grid.Row="1" Foreground="#7ABA3F" TextAlignment="Center" FontFamily="Monotype Corsiva" FontSize="24"/>
+            </Grid>
+        </Button>
+        <Button x:Name="b_books" Grid.Column="1" Grid.Row="1" Click="B_books_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Image Source="..\Resourses/img_book.png" Margin="5"/>
+                <TextBlock Text="Books" Grid.Row="1" Foreground="#EE1595" TextAlignment="Center" FontFamily="Monotype Corsiva" FontSize="24"/>
+            </Grid>
+        </Button>
+        <Button x:Name="b_music" Grid.Column="2" Click="B_music_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Image Source="..\Resourses/img_music.png" Margin="5"/>
+                <TextBlock Text="Music" Grid.Row="1" Foreground="#DE254C" TextAlignment="Center" FontFamily="Monotype Corsiva" FontSize="24"/>
+            </Grid>
+        </Button>
+        <Button x:Name="b_pictures" Grid.Column="2" Grid.Row="1" Click="B_pictures_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Image Source="..\Resourses/img_picture.png" Margin="5"/>
+                <TextBlock Text="Pictures" Grid.Row="1" Foreground="#A18167" TextAlignment="Center" FontFamily="Monotype Corsiva" FontSize="24"/>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>

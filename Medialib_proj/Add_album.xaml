@@ -1,0 +1,25 @@
+﻿<Window x:Class="Medialib_proj.Add_album"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Add_album" Height="153" Width="387" ResizeMode="NoResize">
+    <Grid>
+        <DockPanel Margin="5,0">
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Name:</Label>
+                <TextBox x:Name="tb_name" TextWrapping="NoWrap" Width="294"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Band:</Label>
+                <Border BorderBrush="#FFABADB3" BorderThickness="1">
+                    <TextBlock x:Name="tb_band" Margin="5,0" Width="200" Height="17"/>
+                </Border>
+                <Button x:Name="b_pickband" Margin="5,0" Content="Bands" Width="81" Click="B_pickband_Click"/>
+            </StackPanel>
+            <Button x:Name="b_add" Content="Add" Margin="5" Click="B_add_Click" Width="312"/>
+        </DockPanel>
+    </Grid>
+</Window>

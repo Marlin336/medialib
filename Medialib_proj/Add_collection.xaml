@@ -1,0 +1,39 @@
+﻿<Window x:Class="Medialib_proj.Add_collection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Add collection" Height="265.134" Width="488.528" ResizeMode="NoResize">
+    <Grid>
+        <DockPanel Margin="5,0">
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Name:</Label>
+                <TextBox x:Name="tb_name" TextWrapping="NoWrap" Width="400"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Movies:</Label>
+                <ComboBox x:Name="cb_movies" Width="288" IsEnabled="False"/>
+                <Button x:Name="b_movie_add" Margin="5,0" Content="Movies" Width="101" Click="B_movie_add_Click"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Music:</Label>
+                <ComboBox x:Name="cb_music" Width="294" IsEnabled="False"/>
+                <Button x:Name="b_music_add" Margin="5,0" Content="Music" Width="101" Click="B_music_add_Click"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Pictures:</Label>
+                <ComboBox x:Name="cb_pictures" Width="284" IsEnabled="False"/>
+                <Button x:Name="b_picture_add" Margin="5,0" Content="Pictures" Width="101" Click="B_picture_add_Click"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Texts:</Label>
+                <ComboBox x:Name="cb_texts" Width="299" IsEnabled="False"/>
+                <Button x:Name="b_text_add" Margin="5,0" Content="Texts" Width="101" Click="B_text_add_Click"/>
+            </StackPanel>
+            <Button x:Name="b_add" Content="Add" Margin="5" Click="B_add_Click" Width="407"/>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="Medialib_proj.Add_genre"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Add_genre" Height="141.316" Width="338.158" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Genre name:" HorizontalAlignment="Left" Margin="10" Height="32"/>
+                <TextBox x:Name="tb_name" HorizontalAlignment="Stretch" Width="224" Height="23"/>
+            </StackPanel>
+            <Button x:Name="b_add" Content="Add" Margin="10" Height="38" Click="B_add_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

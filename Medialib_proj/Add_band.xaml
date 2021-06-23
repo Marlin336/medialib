@@ -1,0 +1,24 @@
+﻿<Window x:Class="Medialib_proj.Add_band"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Add_band" Height="148.873" Width="402.444">
+    <Grid>
+        <DockPanel Margin="5,0">
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Name:</Label>
+                <TextBox x:Name="tb_name" TextWrapping="NoWrap" Width="306"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5" DockPanel.Dock="Top">
+                <Label SnapsToDevicePixels="True" Content="Members:"/>
+                <ComboBox x:Name="cb_members" Width="203" IsEnabled="False"/>
+                <Button x:Name="b_pickmembers" Margin="5,0" Content="Members" Width="79" Click="B_pickmembers_Click"/>
+            </StackPanel>
+            <Button x:Name="b_add" Content="Add" Margin="5" Click="B_add_Click" Width="332"/>
+        </DockPanel>
+    </Grid>
+</Window>

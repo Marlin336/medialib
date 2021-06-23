@@ -1,0 +1,41 @@
+﻿<Window x:Class="Medialib_proj.ProfWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Profile" Height="278" Width="250" ResizeMode="NoResize" MinWidth="250" MinHeight="105" Closing="Window_Closing">
+    <Grid>
+        <DockPanel Margin="5" LastChildFill="True">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label Content="Login:" FontWeight="Bold" HorizontalAlignment="Left"/>
+                <Label>
+                    <TextBlock x:Name="l_log" Text="logtext"/>
+                </Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label Content="Language:" FontWeight="Bold"/>
+                <ComboBox x:Name="_Languages">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding lang}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <GroupBox DockPanel.Dock="Top">
+                <GroupBox.Header>
+                    <Label>Privileges</Label>
+                </GroupBox.Header>
+                <ListBox x:Name="_Privileges">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox IsEnabled="False" IsChecked="{Binding IsChecked}" Content="{Binding Privilege}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </GroupBox>
+        </DockPanel>
+    </Grid>
+</Window>

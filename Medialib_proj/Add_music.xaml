@@ -1,0 +1,57 @@
+﻿<Window x:Class="Medialib_proj.Add_music"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Add music record" Height="532" Width="382" ResizeMode="NoResize">
+    <Grid>
+        <DockPanel Margin="5,0">
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Name:</Label>
+                <TextBox x:Name="tb_name" TextWrapping="NoWrap" Width="294"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Year:</Label>
+                <ext:IntegerUpDown x:Name="num_year" Width="100" DefaultValue="2000"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Album:</Label>
+                <Border BorderBrush="#FFABADB3" BorderThickness="1">
+                    <TextBlock x:Name="tb_album" Margin="5,0" Width="200" Height="17"/>
+                </Border>
+                <Button x:Name="b_pickalbum" Margin="5,0" Content="Albums" Width="77" Click="B_pickalbum_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5" DockPanel.Dock="Top">
+                <Label>Genres:</Label>
+                <ComboBox x:Name="cb_genres" Width="208" IsEnabled="False"/>
+                <Button x:Name="b_pickgenres" Margin="5,0" Content="Genres" Width="79" Click="B_pickgenres_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5" DockPanel.Dock="Top">
+                <Label>Composers:</Label>
+                <ComboBox x:Name="cb_composers" Width="185" IsEnabled="False"/>
+                <Button x:Name="b_pickcomposers" Margin="5,0" Content="Composers" Width="79" Click="B_pickcomposers_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5" DockPanel.Dock="Top">
+                <Label>Singers:</Label>
+                <ComboBox x:Name="cb_singers" Width="206" IsEnabled="False"/>
+                <Button x:Name="b_picksingers" Margin="5,0" Content="Singers" Width="79" Click="B_picksingers_Click"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Number:</Label>
+                <ext:IntegerUpDown x:Name="num_number" Width="100"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Duration:</Label>
+                <ext:TimePicker x:Name="tp_duration" Format="LongTime" ShowDropDownButton="False" DefaultValue="0:00:00" Height="24" Width="134" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Description:</Label>
+                <TextBox x:Name="tb_descript" TextWrapping="Wrap" Width="270" Height="150"/>
+            </StackPanel>
+            <Button x:Name="b_add" Content="Add" Margin="5" Click="B_add_Click" Width="332"/>
+        </DockPanel>
+    </Grid>
+</Window>

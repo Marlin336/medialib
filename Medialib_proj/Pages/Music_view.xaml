@@ -1,0 +1,102 @@
+﻿<Page x:Class="Medialib_proj.Pages.Music_view"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Medialib_proj.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Music_view">
+
+    <Grid>
+        <TabControl TabStripPlacement="Top">
+            <TabItem Header="Description">
+                <Grid>
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Name:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_name" Content="nametext" FontSize="13"/>
+                        </StackPanel>
+                        <Label x:Name="lab_year" Content="Year" FontSize="13"  DockPanel.Dock="Top"/>
+                        <StackPanel Orientation="Horizontal"  DockPanel.Dock="Top">
+                            <Label Content="Genre:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_genre" Content="genrelist" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Band:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_bandname" Content="bandname" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Composers:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_composlist" Content="composerlist" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Singers:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_singlist" Content="singerlist" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Album:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_albumname" Content="album" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Number:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_num" Content="number" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Duration:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_duration" Content="duration" FontSize="13"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                            <Label Content="Rating:" FontSize="13" FontWeight="Bold"/>
+                            <Label x:Name="lab_rating" Content="rating" FontSize="13"/>
+                        </StackPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" DockPanel.Dock="Top">
+                            <TextBlock x:Name="tb_descript" TextWrapping="Wrap" Margin="5" FontSize="13"/>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Comments" GotFocus="TabItem_GotFocus">
+                <Grid>
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" Margin="5,5,5,0" DockPanel.Dock="Top">
+                            <Label Content="Your grade: " FontSize="18" VerticalContentAlignment="Center"/>
+                            <Label>
+                                <Image x:Name="star_1" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_2" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_3" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_4" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                            <Label>
+                                <Image x:Name="star_5" Source="../Resourses/img_unstar.png" MouseEnter="Star_MouseEnter" MouseLeave="Star_MouseLeave" MouseDown="Star_MouseDown" Height="60" Width="60"/>
+                            </Label>
+                        </StackPanel>
+                        <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Auto">
+                            <TextBox x:Name="comment_field" Margin="5" TextWrapping="Wrap" Height="100" KeyDown="Comment_field_KeyDown"/>
+                        </ScrollViewer>
+                        <ListBox x:Name="lb_comment" Margin="5,5,5,0" Focusable="False" DockPanel.Dock="Top">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="Black" BorderThickness="1,1,0,1" Tag="{Binding id}" MouseDown="Border_MouseDown">
+                                        <StackPanel>
+                                            <Label Foreground="Gray">
+                                                <TextBlock Text="{Binding data}"/>
+                                            </Label>
+                                            <TextBlock Margin="7" Text="{Binding comment}"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

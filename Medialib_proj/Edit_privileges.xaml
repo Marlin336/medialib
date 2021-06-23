@@ -1,0 +1,32 @@
+﻿<Window x:Class="Medialib_proj.Edit_privileges"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Edit_privileges" Height="418" Width="306">
+    <Grid>
+        <DockPanel Margin="5" LastChildFill="True">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label Content="Login:" FontWeight="Bold" HorizontalAlignment="Left"/>
+                <Label>
+                    <TextBlock x:Name="l_log" Text="logtext"/>
+                </Label>
+            </StackPanel>
+            <GroupBox DockPanel.Dock="Top" VerticalContentAlignment="Stretch" Margin="0,0,0,48">
+                <GroupBox.Header>
+                    <Label>Privileges</Label>
+                </GroupBox.Header>
+                <ListBox x:Name="_Privileges">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsChecked}" Content="{Binding Privilege}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </GroupBox>
+        </DockPanel>
+        <Button Height="48" Content="Save privileges" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="6,0,6,5" Click="Button_Click"/>
+    </Grid>
+</Window>

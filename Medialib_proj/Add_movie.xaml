@@ -1,0 +1,60 @@
+﻿<Window x:Class="Medialib_proj.Add_movie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ext="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Medialib_proj"
+        mc:Ignorable="d"
+        Title="Add movie record" Height="483" Width="376" HorizontalContentAlignment="Stretch" ResizeMode="NoResize">
+    <Grid>
+        <DockPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Original name language:</Label>
+                <ComboBox x:Name="cb_lang" Width="203" Margin="0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Original name:</Label>
+                <TextBox x:Name="tb_name" TextWrapping="NoWrap" Width="256"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Year:</Label>
+                <ext:IntegerUpDown x:Name="num_year" Width="100" DefaultValue="2000"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5" DockPanel.Dock="Top">
+                <Label>Genres:</Label>
+                <ComboBox x:Name="cb_genres" Width="212" IsEnabled="False"/>
+                <Button x:Name="b_pickgenres" Margin="5,0" Content="Genres" Width="76" Click="B_pickgenres_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5" DockPanel.Dock="Top">
+                <Label>Producers:</Label>
+                <ComboBox x:Name="cb_producers" Width="198" IsEnabled="False"/>
+                <Button x:Name="b_pickproducers" Margin="5,0" Content="Producers" Width="73" Click="B_pickproducers_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5" DockPanel.Dock="Top">
+                <Label>Actors:</Label>
+                <ComboBox x:Name="cb_actors" Width="212" IsEnabled="False"/>
+                <Button x:Name="b_pickactors" Margin="5,0" Content="Actors" Width="79" Click="B_pickactors_Click"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Duration:</Label>
+                <ext:TimePicker x:Name="tp_duration" Format="LongTime" ShowDropDownButton="False" DefaultValue="0:00:00" Height="24" Width="284" VerticalAlignment="Top"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Place:</Label>
+                <TextBox x:Name="tb_place" TextWrapping="NoWrap" Width="303"/>
+            </StackPanel>
+            <StackPanel Margin="5,5" Orientation="Horizontal" DockPanel.Dock="Top">
+                <Label>Description:</Label>
+                <TextBox x:Name="tb_descript" TextWrapping="Wrap" Width="270" Height="96"/>
+            </StackPanel>
+            <Button x:Name="b_add" Content="Add" Margin="5" Click="B_add_Click"/>
+        </DockPanel>
+    </Grid>
+</Window>
